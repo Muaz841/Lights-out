@@ -30,7 +30,7 @@ public  class Board
         return true;
     }
 
-    public void Apply(Piece piece, int x, int y, int amount)
+    public void Apply(Piece piece, int x, int y, int step)
     {
         for (int pr = 0; pr < piece.Rows; pr++)
         {
@@ -40,7 +40,7 @@ public  class Board
                 {
                     int row = y + pr;
                     int col = x + pc;
-                    _cells[row, col] = (_cells[row, col] + amount) % _depth;
+                    _cells[row, col] = (_cells[row, col] + step) % _depth;
                 }
             }
         }
