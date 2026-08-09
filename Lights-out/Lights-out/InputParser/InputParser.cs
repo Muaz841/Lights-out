@@ -1,7 +1,4 @@
 ﻿using Lights_out.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lights_out.InputParser
 {
@@ -36,11 +33,11 @@ namespace Lights_out.InputParser
             foreach (string token in tokens)
             {
                 string[] rows = token.Split(',');
+
                 bool[,] cells = new bool[rows.Length, rows[0].Length];
 
                 for (int r = 0; r < rows.Length; r++)
-                    for (int c = 0; c < rows[r].Length; c++)
-                        cells[r, c] = rows[r][c] == 'X';
+                    for (int c = 0; c < rows[r].Length; c++) cells[r, c] = rows[r][c] == 'X';
 
                 pieces.Add(new Piece(cells));
             }
